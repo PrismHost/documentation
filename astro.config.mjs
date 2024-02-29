@@ -5,31 +5,38 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Prism Host Documentation',
+			title: 'Prism Host Knowledgebase',
 			logo: {
 				src: './src/assets/logo.png',
 				replacesTitle: true,
 			},
 			social: {
 				discord: 'https://discord.gg/prismhost',
-				github: 'https://github.com/withastro/starlight',
 			},
 			editLink: {
-				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
+				baseUrl: 'https://github.com/PrismHost/documentation/tree/main/',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Frequently Asked Questions',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
+						{ label: 'FAQ', link: '/faq/' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Guides',
+					collapsed: false,
+					autogenerate: { directory: 'guides', collapsed: true, },
 				},
+				{ label: 'Website', link: 'https://prism-host.com' },
+				{ label: 'Client Portal', link: 'https://client.prism-host.com' },
+				{ label: 'Discord', link: 'https://discord.gg/prism' },
 			],
+			customCss: [
+				'./src/styles/custom.css',
+			],
+			favicon: './src/assets/favicon.png'
 		}),
 	],
 });

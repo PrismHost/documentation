@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "prism-host-documentation",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.12.0",
-    "astro": "^3.2.3",
+    "@astrojs/starlight": "^0.20.1",
+    "astro": "^4.4.6",
     "sharp": "^0.32.5"
   }
 }
