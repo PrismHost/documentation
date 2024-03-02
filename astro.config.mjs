@@ -31,7 +31,7 @@ export default defineConfig({
 				},
 				{ label: 'Website', link: 'https://prism-host.com' },
 				{ label: 'Client Portal', link: 'https://client.prism-host.com' },
-				{ label: 'Discord', link: 'https://discord.gg/prism' },
+				{ label: 'Discord', link: 'https://discord.gg/prismhost' },
 			],
 			customCss: [
 				'./src/styles/custom.css',
