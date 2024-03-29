@@ -1,0 +1,28 @@
+---
+title: Connect to your server
+description: This guide will teach you how to connect to your new VPS.
+---
+import { Aside } from '@astrojs/starlight/components';
+
+## Connecting to your Linux VPS
+
+1. Check your email for the information used to connect to your server.
+2. Depending on your OS, you might have to install an SSH Client such as [PuTTY](https://www.putty.org/) or [MobaXTerm](https://mobaxterm.mobatek.net/). I'll be using Windows Terminal for this example.
+3. Type `ssh <servers_username>@<servers_ip_address>` and hit enter.
+Example: ![](../../../../assets/kb/dedicated-servers/ssh-example.png)
+
+
+<Aside type="caution" title="Info!">
+  If you chose to setup SSH keys upon install of the OS, you'll need to specify the key in order to connect.
+</Aside>
+
+4. Press enter and then enter the passsword in the email you recieved.
+5. Congrats! You've successfully connected to your server!
+
+## Connecting to your Windows VPS
+
+1. Check your email for the information used to connect to your server.
+2. Depending on your OS, you might have to install an RDP or Remote Desktop Connection client. Windows 10/11 comes with it by default, and that's what I'll be using in this example.
+3. Open your RDP software of choice, and enter the servers IP Address.
+4. You will then be prompted to enter the username & password of the machine you're attempting to connect to. Enter the respective information from the email.
+5. Congrats! You've successfully connected to your server!
