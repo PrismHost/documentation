@@ -1,0 +1,54 @@
+---
+title: Manage Sub-users
+description: Here's how you can add and remove sub-users to your client portal account.
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
+import { TriangleAlertIcon } from "lucide-react"
+import UserManagement from '@/images/user-management.png'
+import InviteNewUser from "@/images/invite-new-user.png"
+import RemoveUser from "@/images/remove-user.png"
+
+## Adding a sub-user
+
+<Steps>
+    <Step>
+        ### Login to the [client portal](https://client.prism-host.com).
+    </Step>
+    <Step>
+        ### Once logged in, click on your name in the top right of the page and choose "User Management"
+        <img src={UserManagement.src}/>
+    </Step>
+    <Step>
+        ### Find the "Invite New User" section.
+        Here is where you will enter the users email address, once you send the invitation the user will receive an email to accept it. After 7 days, the invite will expire.
+        <img src={InviteNewUser.src} />
+        <Alert variant="destructive">
+            <TriangleAlertIcon />
+            <AlertTitle>IMPORTANT!</AlertTitle>
+            <AlertDescription>
+                Adding a sub-user to your client portal account *will* give them access to your personal information such as name, address and phone number. Please only give access to your account to people you 100% trust and only give them the permissions they absolutely need. You are responsible for the security of your account.
+            </AlertDescription>
+        </Alert>
+    </Step>
+    <Step>
+        ### Once the user accepts the invitation, they may access your account with the permissions you granted. 
+    </Step>
+</Steps>
+
+## Removing a sub-user
+
+<Steps>
+    <Step>
+        ### Login to the [client portal](https://client.prism-host.com).
+    </Step>
+    <Step>
+        ### Once logged in, click on your name in the top right of the page and choose "User Management"
+        <img src={UserManagement.src}/>
+    </Step>
+    <Step>
+        ### Find the "User Management" section.
+        Here is how you can manage the users that have access to your account. You can modify their permissions by clicking "Manage Permissions", or remove their access by clicking "Remove Access"
+        <img src={RemoveUser.src} />
+    </Step>
+</Steps>

@@ -1,0 +1,44 @@
+---
+title: Activate Affiliate Account
+description: Here's how you can activate or deactivate your affiliate account.
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
+import { TriangleAlertIcon } from "lucide-react"
+import DiscordLink from '@/images/discord-link.png'
+import DiscordUnlink from "@/images/discord-unlink.png"
+
+## Activating
+
+<Steps>
+    <Step>
+        ### Login to the [client portal](https://client.prism-host.com).
+    </Step>
+    <Step>
+        ### Navigate to the ["Affiliates"](https://client.prism-host.com/affiliates.php) page on the navbar.
+    </Step>
+    <Step>
+        ### On this page, click the green "Activate Affiliate Account" button.
+    </Step>
+    <Step>
+        ### Boom! You're now an affiliate.
+        From here you can view your clicks, sign-ups & conversion percentage. You can also request a withdrawal and view your unique referral link here.
+
+        You can use the referral to refer people to us for a commission. As long as they use your link when they purchase a service, you'll receive a commission from it every month.
+    </Step>
+</Steps>
+
+## Deactivating
+
+<Steps>
+    <Step>
+        ### Create a ticket on the [client portal](https://client.prism-host.com) or on the [Discord](https://discord.prism-host.com) to have support deactivate your account.
+        <Alert variant="destructive">
+            <TriangleAlertIcon />
+            <AlertTitle>IMPORTANT!</AlertTitle>
+            <AlertDescription>
+                All of your affiliate data, including your commission balance, will be DELETED when your affiliate account is deactivated. Once your account has been deactivated, it is not possible to get this information back.
+            </AlertDescription>
+        </Alert>
+    </Step>
+</Steps>

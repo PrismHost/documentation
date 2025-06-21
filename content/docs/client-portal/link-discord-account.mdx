@@ -1,0 +1,55 @@
+---
+title: Link your Discord Account
+description: Here's how you can link your Discord account to our Client Portal to automatically get your roles in the Discord.
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
+import { TriangleAlertIcon } from "lucide-react"
+import DiscordLink from '@/images/discord-link.png'
+import DiscordUnlink from "@/images/discord-unlink.png"
+
+## Linking your Account
+
+<Steps>
+    <Step>
+        ### Login to the [client portal](https://client.prism-host.com)
+    </Step>
+    <Step>
+        ### On the client portal home page, find the "Discord Link" card 
+        <img src={DiscordLink.src} />
+    </Step>
+    <Step>
+        ### Click the blue "Link Discord" button at the top right of the card.
+    </Step>
+    <Step>
+        ### Click Authorize on the Discord page that appears.
+    </Step>
+    <Step>
+        ### You'll be redirected back to the client portal with a success page. You should now receive your roles in Discord.
+        <Alert variant="destructive">
+            <TriangleAlertIcon />
+            <AlertTitle>Didn't receive your roles?</AlertTitle>
+            <AlertDescription>
+                It may take up to 30 minutes to apply the roles to your account on Discord, after that if you still do not have your roles, please open a ticket on the Discord and we can assist you!
+            </AlertDescription>
+        </Alert>
+    </Step>
+</Steps>
+
+## Unlinking your Account
+
+<Steps>
+    <Step>
+        ### Login to the [client portal](https://client.prism-host.com)
+    </Step>
+    <Step>
+        ### On the client portal home page, find the "Discord Link" card 
+        <img src={DiscordUnlink.src} />
+    </Step>
+    <Step>
+        ### Click the blue "Unlink Discord" button at the top right of the card.
+    </Step>
+    <Step>
+        ### You'll be redirected back to the client portal with a success page. Your account is now unlinked.
+    </Step>
+</Steps>
