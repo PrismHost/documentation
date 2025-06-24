@@ -1,6 +1,6 @@
 ---
-title: Link your Discord Account
-description: Here's how you can link your Discord account to our Client Portal to automatically get your roles in the Discord.
+title: Linking your Discord Account
+description: Linking your Discord account allows you to automatically receive server roles, access special channels, and verify your purchases in the community Discord server.
 ---
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
@@ -8,48 +8,67 @@ import { TriangleAlertIcon } from "lucide-react"
 import DiscordLink from '@/images/discord-link.png'
 import DiscordUnlink from "@/images/discord-unlink.png"
 
-## Linking your Account
+## Linking Your Account
+
+Follow the steps below to connect your Discord account to your client portal account.
+
+### Steps
 
 <Steps>
     <Step>
-        ### Login to the [client portal](https://client.prism-host.com)
+        #### Log in to the Client Portal  
+        Go to [client.prism-host.com](https://client.prism-host.com) and log in with your credentials.
     </Step>
     <Step>
-        ### On the client portal home page, find the "Discord Link" card 
+        #### Locate the "Discord Link" Card  
+        On the client portal homepage, find the card labeled **Discord Link**.  
         <img src={DiscordLink.src} />
     </Step>
     <Step>
-        ### Click the blue "Link Discord" button at the top right of the card.
+        #### Click "Link Discord"  
+        Click the blue **Link Discord** button at the top right of the card.
     </Step>
     <Step>
-        ### Click Authorize on the Discord page that appears.
+        #### Authorize the Link  
+        A Discord window will open - click **Authorize** to link your Discord account.
     </Step>
     <Step>
-        ### You'll be redirected back to the client portal with a success page. You should now receive your roles in Discord.
-        <Alert variant="destructive">
-            <TriangleAlertIcon />
-            <AlertTitle>Didn't receive your roles?</AlertTitle>
-            <AlertDescription>
-                It may take up to 30 minutes to apply the roles to your account on Discord, after that if you still do not have your roles, please open a ticket on the Discord and we can assist you!
-            </AlertDescription>
-        </Alert>
+        #### Done!  
+        You'll be redirected back to the client portal and see a confirmation message.
+
+        > **Note:** It may take up to **30 minutes** for roles to be applied in Discord.  
+        If your roles haven't appeared after that time, please [open a ticket on our Discord](https://prism-host.com/discord) and we’ll be happy to assist you.
     </Step>
 </Steps>
 
-## Unlinking your Account
+---
+
+## Unlinking Your Account
+
+Need to disconnect your Discord account? Follow the steps below to unlink it from your client portal account.
+
+### Steps
 
 <Steps>
     <Step>
-        ### Login to the [client portal](https://client.prism-host.com)
+        #### Log in to the Client Portal  
+        Head to [client.prism-host.com](https://client.prism-host.com) and sign in.
     </Step>
     <Step>
-        ### On the client portal home page, find the "Discord Link" card 
+        #### Locate the "Discord Link" Card  
+        On the client portal homepage, find the card labeled **Discord Link**.  
         <img src={DiscordUnlink.src} />
     </Step>
     <Step>
-        ### Click the blue "Unlink Discord" button at the top right of the card.
+        #### Click "Unlink Discord"  
+        Click the blue **Unlink Discord** button at the top right of the card.
     </Step>
     <Step>
-        ### You'll be redirected back to the client portal with a success page. Your account is now unlinked.
+        #### Success!  
+        You'll be redirected back to the client portal and see a success message confirming your account has been unlinked.
     </Step>
 </Steps>
+
+---
+
+If you experience any issues with linking or unlinking your account, please don't hesitate to [contact us](https://prism-host.com/contact).

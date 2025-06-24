@@ -1,6 +1,6 @@
 ---
 title: Manage Sub-users
-description: Here's how you can add and remove sub-users to your client portal account.
+description: You can add sub-users to your client portal account to allow team members or collaborators to manage services on your behalf. This guide walks you through how to add and remove sub-users securely.
 ---
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Alert, AlertTitle, AlertDescription } from '@/components/alert';
@@ -9,46 +9,65 @@ import UserManagement from '@/images/user-management.png'
 import InviteNewUser from "@/images/invite-new-user.png"
 import RemoveUser from "@/images/remove-user.png"
 
-## Adding a sub-user
+## Adding a Sub-User
+
+Sub-users can help manage your account, but should only be given access if absolutely necessary. Instead, consider giving access to the service specific management panels.
+
+### Steps
 
 <Steps>
     <Step>
-        ### Login to the [client portal](https://client.prism-host.com).
+        #### Log in to the Client Portal  
+        Go to [client.prism-host.com](https://client.prism-host.com) and log in with your credentials.
     </Step>
     <Step>
-        ### Once logged in, click on your name in the top right of the page and choose "User Management"
-        <img src={UserManagement.src}/>
+        #### Go to User Management  
+        Once logged in, click your name in the top-right corner and select **User Management**.  
+        <img src={UserManagement.src} />
     </Step>
     <Step>
-        ### Find the "Invite New User" section.
-        Here is where you will enter the users email address, once you send the invitation the user will receive an email to accept it. After 7 days, the invite will expire.
+        #### Invite a New User  
+        Scroll down to the **Invite New User** section.  
+        Enter the email address of the person you'd like to invite. They'll receive an email with a link to accept the invitation.  
+        > Invitations expire after **7 days** if not accepted.  
         <img src={InviteNewUser.src} />
-        <Alert variant="destructive">
-            <TriangleAlertIcon />
-            <AlertTitle>IMPORTANT!</AlertTitle>
-            <AlertDescription>
-                Adding a sub-user to your client portal account *will* give them access to your personal information such as name, address and phone number. Please only give access to your account to people you 100% trust and only give them the permissions they absolutely need. You are responsible for the security of your account.
-            </AlertDescription>
-        </Alert>
+
+        > **IMPORTANT**: Adding a sub-user gives them access to your **personal information**, such as your name, address, and phone number. Only grant access to people you fully trust, and assign only the permissions they need.  
+        **You are responsible for any actions taken by sub-users on your account.**
     </Step>
     <Step>
-        ### Once the user accepts the invitation, they may access your account with the permissions you granted. 
+        #### User Accepts the Invitation  
+        Once the invited user accepts the request, they will be able to access your account with the permissions you've granted.
     </Step>
 </Steps>
 
-## Removing a sub-user
+---
+
+## Removing a Sub-User
+
+If a user no longer needs access to your account, you can remove or modify their permissions at any time.
+
+### Steps
 
 <Steps>
     <Step>
-        ### Login to the [client portal](https://client.prism-host.com).
+        #### Log in to the Client Portal  
+        Visit [client.prism-host.com](https://client.prism-host.com) and log in.
     </Step>
     <Step>
-        ### Once logged in, click on your name in the top right of the page and choose "User Management"
-        <img src={UserManagement.src}/>
+        #### Go to User Management  
+        Click your name in the top-right corner and select **User Management**.  
+        <img src={UserManagement.src} />
     </Step>
     <Step>
-        ### Find the "User Management" section.
-        Here is how you can manage the users that have access to your account. You can modify their permissions by clicking "Manage Permissions", or remove their access by clicking "Remove Access"
+        #### Manage or Remove Users  
+        In the **User Management** section, you'll see a list of sub-users linked to your account.  
+        - Click **Manage Permissions** to change what a sub-user can do.  
+        - Click **Remove Access** to revoke their access entirely.  
         <img src={RemoveUser.src} />
     </Step>
 </Steps>
+
+---
+
+Need help managing sub-user access? [Contact us](https://prism-host.com/contact) and we'll be glad to assist.
