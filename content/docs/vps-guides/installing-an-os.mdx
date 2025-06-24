@@ -1,0 +1,76 @@
+---
+title: Installing an OS
+description: Before you can start using your VPS, you'll need to install an operating system. This guide walks you through how to install an OS on your VPS using the VPS panel.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Steps
+
+<Steps>
+    <Step>
+        #### Log in to the VPS Panel  
+        Use the login link provided in your email (typically `https://panel.prism-host.com`) and sign in with your credentials.
+    </Step>
+    <Step>
+        #### Select and Manage Your VPS  
+        On the VirtFusion dashboard, locate your VPS and click the **Manage** button next to it.
+    </Step>
+    <Step>
+        #### Begin OS Installation  
+        If its the first time installing the OS, you'll see details you need to fill out to begin installing the OS (see below). Otherwise you'll need to click the red "Rebuild" button.
+
+        Details:
+
+        - Name:
+        The server name allows you to easily identify the server under your account. If you are unsure, you can randomly generate one by clicking "Random" to the right of the input box.
+        - Hostname (Optional):
+        The server's hostname, this is usually a domain name that matches the servers IP address. If you are unsure if you need it, you don't and can safely ignore it.
+        - Timezone:
+        The timezone the server is in. This will default to the timezone on your computer, most users will not need to change this.
+
+        > **WARNING**: If you are rebuilding the OS, this will **delete all data** on the VPS. Please be sure you've backed up any necessary and important data beforehand. We are not able to restore your previous VPS after a rebuild.
+    </Step>
+    <Step>
+        #### Choose an Operating System  
+        You'll be shown a list of available operating systems.  
+        Select the one you'd like to install (e.g. Ubuntu, Debian, Windows Server, etc.).
+
+        > If you are unsure as to which version you should choose, we recommend doing research for what services you plan on running on the VPS. Additionally, you can [reach out to us for assistance](https://prism-host.com/contact).
+
+        > **Note:** If Windows is not listed, your VPS plan likely does not meet the minimum requirements to run Windows.  
+        Here's a [guide on how to upgrade](/client-portal/upgrading-or-downgrading) or, you can directly [contact us for help](https://prism-host.com/contact).
+
+        > If you need to install from an ISO, you can click the "Self install" button at the top right of the operating system list. If you do not know what this means, you don't need to worry about it.
+        
+        > If you have chosen a Linux distro, such as Ubuntu, you may see a section for "SWAP Space", if you do not know what this does we recommend to leave it to the default.
+
+        > If you have chosen a Linux distro, such as Ubuntu, you will be able to add SSH Keys to use instead of a password to connect. We recommend using SSH keys where possible for greater security, you can read more about them [here](https://www.ssh.com/academy/ssh-keys).
+        </Step>
+    <Step>
+        #### Advanced Options (Optional)
+        
+        If you need to enable VNC or set your primary & secondary DNS servers, you can do so by clicking "Show advanced Options" at the bottom.
+
+        > Don't worry, both of these can be changed at any time.
+    </Step>
+    <Step>
+        #### Continue with installation
+
+        Click on "Install With \<chosen operating system\>" to begin the install process.
+
+        The installation process usually takes a few minutes, but in some cases it may take up to 30 minutes. You'll see progress indicators and a confirmation once it's complete.
+    </Step>
+    <Step>
+        #### You're Ready to Connect!  
+        Once the OS is installed, your VPS is ready to use.  
+
+        > Need help connecting? Follow our [Connecting to Your VPS Guide](https://docs.prism-host.com/vps/connecting) for step-by-step instructions.
+    </Step>
+</Steps>
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!

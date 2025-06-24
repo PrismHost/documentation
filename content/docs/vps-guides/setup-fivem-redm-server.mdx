@@ -1,0 +1,128 @@
+---
+title: Setup FiveM or RedM Server (Windows)
+description: This guide will walk you through setting up a FiveM or RedM server using txAdmin on your Windows VPS.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+## Folder Setup
+
+Let's start by preparing your folder structure.
+
+<Steps>
+    <Step>
+        #### Create Your Server Folder  
+        On your Desktop (or any location you prefer), create the following structure:
+
+        <Files>
+            <Folder name="Desktop" defaultOpen>
+                <Folder name="FiveM Server" defaultOpen>
+                    <Folder name="Artifacts" defaultOpen>
+                    </Folder>
+                </Folder>
+            </Folder>
+        </Files>
+
+        This will help keep your server files organized and easy to manage.
+    </Step>
+</Steps>
+
+---
+
+## Downloading the Server Artifacts
+
+<Steps>
+    <Step>
+        #### Get the Latest Artifacts  
+        Download the latest server artifacts from the official source:   [runtime.fivem.net](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/)
+
+        > Alternatively, we recommend you use [artifacts.jgscripts.com](https://artifacts.jgscripts.com) for a better source with validated functional artifacts.
+    </Step>
+    <Step>
+        #### Extract to the Artifacts Folder  
+        Extract the downloaded ZIP file to the `Artifacts/` folder you created earlier.
+
+        > You may need a utility like [7-Zip](https://www.7-zip.org/), WinRAR or [NanaZip](https://apps.microsoft.com/detail/9n8g7tscl18r?hl=en-US&gl=US) (Recommended) to extract the artifacts.
+    </Step>
+</Steps>
+
+---
+
+## Starting txAdmin
+
+<Steps>
+    <Step>
+        #### Launch fxserver.exe  
+        Inside your `Artifacts/` folder, **run `FXServer.exe`**.
+
+        > If you get a prompt asking for permission, click "Yes"/"Allow"/"Accept"/"Run Anyway". 
+    </Step>
+    <Step>
+        #### Connect Your CFX Account  
+        A browser window should open asking you to **connect your CFX.re account**.
+
+        > If the window doesn't open automatically, check the server console for a PIN code and visit:  
+        [http://localhost:40120](http://localhost:40120)  
+        Enter the PIN to link your account manually.
+    </Step>
+</Steps>
+
+---
+
+## Server Setup via txAdmin
+
+<Steps>
+    <Step>
+        #### Choose Your Deployment Type  
+        After linking your account, txAdmin will ask what kind of server you want to set up.  
+        Choose from:
+        - Base Template
+        - **QBox** (Recommended over QBCore)
+        - QBCore (Not recommended, use QBox instead)
+        - ESX
+        - RedM
+        - And others
+
+        > QBox is a modern, performance-oriented alternative to QBCore. You can read more [here](https://qbox.re)
+    </Step>
+    <Step>
+        #### Server Data Location  
+        You can choose a custom location for server data if you'd like, but leaving it as the default is completely fine.
+    </Step>
+    <Step>
+        #### Review & Confirm  
+        On the "Review Recipe" page, double-check your configuration and click **Next**.
+    </Step>
+    <Step>
+        #### Enter Your License Key  
+        You'll be prompted to enter a **server license key**. If you don't have one, you need to create one on the [CFX Portal](https://portal.cfx.re) by clicking on "Servers" then "Generate Key" after logging in.
+
+        > You may also be asked to configure a database before continuing.  
+        [Here's a guide on how you can](vps-guides/windows-database-setup), if you haven't already.
+    </Step>
+</Steps>
+
+---
+
+## You're Done!
+
+Your FiveM or RedM server is now ready to go!
+
+To connect to it:
+- Use **Direct Connect** in your FiveM/RedM client with the server IP by pressing `F8` and typing `connect 123.456.78.90` (but with your VPS IP address).
+- Or search for your server in the server browser via the name you chose during setup (Not the name you chose for the license key).
+
+---
+
+## Troubleshooting Connection
+
+> If you're having trouble connecting to your server: Make sure port **30120** (or whatever port specified in the server.cfg file) is open in your Windows Firewall with both the TCP & UDP protocol. [Here's a guide on how to open ports in the Windows/Linux Firewall](/vps-guides/open-ports)
+
+> Additionally, if you want txAdmin accessible externally, you can open port **40120** with the TCP protocol, and access it via your VPS IP:40120 (ie, 123.456.78.90:40120). If you do this, we recommend you tunnel it via cloudflare - here's a [guide on how to do that](/vps-guides/cloudflare-tunnel-txadmin)
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!
