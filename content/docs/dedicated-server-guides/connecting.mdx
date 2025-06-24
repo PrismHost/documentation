@@ -1,0 +1,105 @@
+---
+title: Connecting to a Dedicated Server (Windows & Linux)
+description: Learn how to connect to a Windows or Linux Dedicated Server using built-in tools like Remote Desktop and Windows Terminal.
+---
+
+import { Alert, AlertTitle, AlertDescription } from "@/components/alert";
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Terminal } from "lucide-react";
+
+# Connecting to Your Server
+
+This guide walks you through how to connect to your **Windows** or **Linux** Dedicated Server.
+
+---
+
+## Connecting to a Windows server
+
+To connect to your Windows dedicated server, you will need some remote desktop connection software. Windows comes with this included and that's what we'll be using in this guide.
+
+### Requirements
+All of the requirements are sent to your email when the server is deployed.
+
+- Your Dedicated server IP Address
+- The username (Usually `Administrator`)
+- The password
+
+### Steps
+
+<Steps>
+    <Step>
+        #### Open Remote Desktop Connection
+        Press `Win + S` to search for **Remote Desktop Connection**, and open it.
+    </Step>
+    <Step>
+
+        #### Enter your servers IP address.
+        In the "Computer" or "Host" field, enter the IP address to your dedicated server. This will usually look something like this: `123.456.78.90`
+    </Step>
+    <Step>
+
+        #### Enter the provided username.
+        In the `Username` field, enter the username provided. This is usually `Administrator`.
+        > **Note:** You may need to click "Show Options" on the bottom left of the window to see the `Username` field.
+    </Step>
+    <Step>
+
+        #### Enter the provided password
+        When prompted, enter the provided password. This will either be displayed to you when you install the OS or emailed to you. Please be sure there aren't any spaces in the password.
+        > **Note:** You may need to click "Connect" before being prompted for a password.
+    </Step>
+    <Step>
+
+        #### Connect to your server
+        Click "Connect" to connect to your server.
+        **Note:** You may be prompted to confirm the certificate on the machine, you can click yes for this.
+        Congrats! You're now logged into your Windows dedicated server via RDP (Remote Desktop Protocol). You can now install software, manage files, and interact directly.
+
+        If you run into any issues, please [contact us](https://prism-host.com/contact) — we're happy to help.
+    </Step>
+</Steps>
+
+---
+
+## Connecting to a Linux Server
+
+To connect to your Linux dedicated server, you'll use SSH (Secure Shell). This guide uses **Windows Terminal**, which is built into Windows 10 and 11. No additional software is required.
+
+### Requirements
+All of the requirements are sent to your email when the server is deployed.
+
+- Your Dedicated Server IP Address
+- The username (Usually `root`)
+- The password (or SSH key, depending on your setup)
+
+### Steps
+
+<Steps>
+    <Step>
+        #### Open Terminal
+        Press `Win + S` to search for **Terminal**, and open it.
+        > You can also use Command Prompt or PowerShell if you prefer.
+    </Step>
+    <Step>
+
+        #### Connect to your server using SSH
+        Use the following command, replacing `123.456.78.90` with your server's IP and `root` with your username (if different):
+        ```bash
+        ssh root@123.456.78.90
+        ```
+        If it's your first time connecting, you'll be asked to confirm the host's fingerprint. Type `yes` and press Enter.
+    </Step>
+    <Step>
+
+        #### Enter your password
+        When prompted, enter the password provided to you. Note that when typing your password, no characters will appear — this is normal.
+        > Tip: Right-click to paste the password if you've copied it.
+    </Step>
+    <Step>
+
+        #### You are now connected!
+        Congrats! You're now logged into your Linux dedicated server via SSH. You can now install software, manage files, and run commands directly.
+
+        If you run into any issues, please [contact us](https://prism-host.com/contact) — we're happy to help.
+    </Step>
+</Steps>
