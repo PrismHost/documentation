@@ -1,4 +1,4 @@
 {
   "title": "VPS Guides",
-  "pages": ["getting-started", "..."]
+  "pages": ["getting-started", "...", "cloudflare-tunnel-txadmin"]
 }

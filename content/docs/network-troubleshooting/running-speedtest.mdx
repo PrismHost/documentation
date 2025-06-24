@@ -1,0 +1,146 @@
+---
+title: Running a Speedtest
+description: This guide will walk you through how to run a speedtest regardless of your operating system. Running a speed test is useful for checking your network performance — such as download, upload, and latency — directly from your server.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+
+## Windows
+
+<Steps>
+    <Step>
+        #### Download the Speedtest CLI  
+        Go to the official download page:  
+        [https://www.speedtest.net/apps/cli](https://www.speedtest.net/apps/cli)
+
+        - Download the version for **Windows** (64-bit recommended)
+        - Extract the ZIP file to a folder like `C:\speedtest\`
+    </Step>
+    <Step>
+        #### Open Command Prompt  
+        Press `Win + R`, type `cmd`, and press Enter.  
+        Then change to the folder where you extracted the speedtest files:
+        ```bash
+        cd C:\speedtest
+        ```
+    </Step>
+    <Step>
+        #### Run the Speed Test  
+        Use the following command:
+        ```bash
+        speedtest.exe
+        ```
+
+        This will perform a basic speed test using Speedtest.net servers.
+    </Step>
+</Steps>
+
+---
+
+## Linux
+
+<Tabs items={['Debian / Ubuntu', 'CentOS / RHEL / Alma / Rocky', 'Arch', 'Alpine']}>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Install Speedtest CLI**  
+        ```bash
+        sudo apt update
+        sudo apt install -y curl
+        curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+        sudo apt install speedtest
+        ```
+        </Step>
+        <Step>
+        **Run the Speed Test**  
+        ```bash
+        speedtest
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Install Speedtest CLI**  
+        ```bash
+        sudo dnf install -y curl
+        curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.rpm.sh | sudo bash
+        sudo dnf install speedtest
+        ```
+        </Step>
+        <Step>
+        **Run the Speed Test**  
+        ```bash
+        speedtest
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Install Using AUR**  
+        You can install via an AUR helper like `yay`:
+        ```bash
+        yay -S speedtest-cli
+        ```
+        Or manually via:
+        ```bash
+        git clone https://aur.archlinux.org/speedtest-cli.git
+        cd speedtest-cli
+        makepkg -si
+        ```
+        </Step>
+        <Step>
+        **Run the Speed Test**  
+        ```bash
+        speedtest
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Use Python Version (No Official CLI Available)**  
+        Alpine does not support the official CLI easily, so install via pip:
+        ```bash
+        apk add py3-pip
+        pip3 install speedtest-cli
+        ```
+        </Step>
+        <Step>
+        **Run the Speed Test**  
+        ```bash
+        speedtest-cli
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+</Tabs>
+
+---
+
+## Done
+
+Your test results will include:
+
+- **Download speed**
+- **Upload speed**
+- **Ping (latency)**
+- **Jitter and packet loss** (depending on method used)
+
+These results can help diagnose slow or unstable connections.
+
+If you're experiencing network issues and unsure how to interpret the results, feel free to [contact us](https://prism-host.com/contact) for assistance.

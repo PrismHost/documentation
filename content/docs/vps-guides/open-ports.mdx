@@ -1,0 +1,173 @@
+---
+title: Open Ports on Your VPS
+description: To allow incoming or outgoing traffic to your applications (such as game servers, websites, or panels), you need to open the correct ports on your firewall. This guide walks you through how to do that on both Windows and several Linux flavors
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+## Windows (Defender Firewall)
+
+Follow these steps to open ports on your Windows VPS or dedicated server using Windows Defender Firewall:
+
+<Steps>
+    <Step>
+        #### Open Firewall Settings  
+        Press `Win + S` and search for **Windows Defender Firewall with Advanced Security**. Open it.
+    </Step>
+    <Step>
+        #### Choose Inbound or Outbound Rules  
+        In the left sidebar, click either:
+        - **Inbound Rules** (for allowing external traffic into your VPS)  
+        - **Outbound Rules** (for allowing traffic going out)
+
+        Most users will need **Inbound Rules**.
+    </Step>
+    <Step>
+        #### Create a New Rule  
+        On the right-hand side, click **New Rule**.
+    </Step>
+    <Step>
+        #### Select "Port" and Click Next  
+        Choose the **Port** option and click **Next**.
+    </Step>
+    <Step>
+        #### Choose Protocol  
+        Select either **TCP** or **UDP** based on your use case.
+
+        > If you need both protocols, you will need to repeat this process twice, once for each protocol.
+    </Step>
+    <Step>
+        #### Specify the Port  
+        Choose **Specific local ports** and enter the port number(s) you want to open. Examples:
+        - `30120` for FiveM  
+        - `40120` for txAdmin  
+        - `25565` for Minecraft  
+        - `80` for HTTP  
+        - `443` for HTTPS
+    </Step>
+    <Step>
+        #### Allow the Connection  
+        Select **Allow the connection**, then click **Next**.
+    </Step>
+    <Step>
+        #### Apply to All Profiles  
+        Leave all profiles (Domain, Private, Public) checked. Click **Next**.
+    </Step>
+    <Step>
+        #### Name the Rule  
+        Give the rule a relevant name like `FiveM TCP`, `txAdmin UDP`, or `Minecraft TCP`. Click **Finish**.
+    </Step>
+</Steps>
+
+---
+
+## Linux (UFW, iptables, or firewalld)
+
+Choose the firewall system your Linux VPS is using and follow the corresponding instructions:
+
+<Tabs items={['UFW', 'iptables', 'firewalld']}>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Enable UFW**  
+        If UFW is not already enabled:
+        ```bash
+        sudo ufw enable
+        ```
+        </Step>
+        <Step>
+        **Open a Port**  
+        Replace `PORT` with your actual port number:
+        ```bash
+        sudo ufw allow PORT/tcp
+        sudo ufw allow PORT/udp
+        ```
+
+        You can also allow common services:
+        ```bash
+        sudo ufw allow http
+        sudo ufw allow https
+        ```
+        </Step>
+        <Step>
+        **Check Status**  
+        Confirm the rule was added:
+        ```bash
+        sudo ufw status
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Open a TCP Port**   
+        Replace `PORT` with the port number:
+        ```bash
+        sudo iptables -A INPUT -p tcp --dport PORT -j ACCEPT
+        ```
+        </Step>
+        <Step>
+        **Open a UDP Port**  
+        Replace `PORT` with the port number:
+        ```bash
+        sudo iptables -A INPUT -p udp --dport PORT -j ACCEPT
+        ```
+        </Step>
+        <Step>
+        **Save Your Rules**  
+        On Debian/Ubuntu:
+        ```bash
+        sudo iptables-save > /etc/iptables/rules.v4
+        ```
+
+        On RHEL/CentOS:
+        ```bash
+        sudo service iptables save
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+    <Tab>
+
+    <Steps>
+        <Step>
+        **Add Permanent Rules**  
+        Use `--permanent` to ensure rules persist across reboots:
+        ```bash
+        sudo firewall-cmd --permanent --add-port=30120/tcp
+        sudo firewall-cmd --permanent --add-port=30120/udp
+        ```
+        </Step>
+        <Step>
+        **Reload the Firewall**  
+        Apply the changes:
+        ```bash
+        sudo firewall-cmd --reload
+        ```
+        </Step>
+        <Step>
+        **Check Active Rules**  
+        ```bash
+        sudo firewall-cmd --list-all
+        ```
+        </Step>
+    </Steps>
+
+    </Tab>
+</Tabs>
+
+---
+
+## Still Can't Connect?
+
+- Double-check that your application is actually running & listening on the port.
+- Check if the port is actually open with, if its not try repeating the steps. You can use a tool like [PortChecker](https://portchecker.co/) to check TCP ports.
+- Restart your server or firewall if needed
+
+If you're still having issues, feel free to [reach out to us](https://prism-host.com/contact) and we'd be happy to assist you.

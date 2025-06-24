@@ -1,0 +1,74 @@
+---
+title: Setup MariaDB (Windows)
+description: This guide will walk you through how to install and configure MariaDB on a Windows system, as well as how to connect to it using a database management tool.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Installing MariaDB (MySQL) on Windows
+
+<Steps>
+    <Step>
+        ### Download MariaDB 
+        Go to the official download site:  
+        [https://mariadb.org/download](https://mariadb.org/download)
+
+        Select the appropriate version for Windows and download the installer.
+    </Step>
+
+    <Step>
+        #### Launch the MariaDB Installer  
+        After downloading, open the installer and follow the prompts.
+
+        - Accept the license agreement
+        - Choose the components you wish to install (default is recommended)
+
+        **Optional but Recommended:**  
+        When prompted, set a **root password** that you will remember. This password will be used to access and manage your database.
+    </Step>
+
+    <Step>
+        #### Choose a Tool to Manage Your Databases  
+        You will need a graphical interface to manage your databases easily. Here are two recommended options:
+
+        - **HeidiSQL**: Included with MariaDB during installation, no separate download required
+        - **DBeaver**: Available at [https://dbeaver.io](https://dbeaver.io)
+
+        If you installed HeidiSQL with MariaDB, you can launch it directly from your Start Menu.
+    </Step>
+
+    <Step>
+        #### Connecting to your database (Optional)
+        Launch either HeidiSQL or DBeaver and create a new connection.
+
+        **Connection Details:**
+        - Host: `127.0.0.1` or `localhost`
+        - Username: `root`
+        - Port: `3306`
+        - Password: The one you set during installation (leave blank if you did not set one)
+
+        Once these details are filled in, connect to the server.
+    </Step>
+
+    <Step>
+        #### Create a Database (Optional)
+        Once connected to the server:
+
+        - Click to create a new database
+        - Name the database something relevant to your project (e.g. `fivem_data`, `gamepanel`, etc.)
+        - Leave default settings unless you have specific needs
+        - Save and refresh to confirm it has been created
+    </Step>
+    <Step>
+        ## Done
+        Your MariaDB server is now installed and ready to use. You can begin importing tables, connecting scripts, or integrating it with your project.
+
+        > If you are setting this up for a FiveM/RedM server, you'd enter the connection details from [step 4](#connecting-to-your-database-optional) into the txAdmin deployer.
+    </Step>
+</Steps>
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!

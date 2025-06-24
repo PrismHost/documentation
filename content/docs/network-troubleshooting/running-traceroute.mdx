@@ -1,0 +1,118 @@
+---
+title: Running a Traceroute
+description: This guide will walk you through how to run a traceroute regardless of your operating system. A traceroute allows you to see the path your connection takes to a destination IP or domain. This is useful for diagnosing packet loss, high latency, or routing issues.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+## Windows (Using WinMTR)
+
+<Steps>
+    <Step>
+        #### Download WinMTR  
+        Visit the official download page:  
+        [https://github.com/White-Tiger/WinMTR/releases](https://github.com/White-Tiger/WinMTR/releases)
+
+        Download the latest `.zip` release and extract it to a folder such as `C:\WinMTR`.
+    </Step>
+    <Step>
+        #### Launch WinMTR  
+        Open `WinMTR.exe` or `WinMTR64.exe` depending on your system. No installation is required.
+    </Step>
+    <Step>
+        #### Run the Traceroute  
+        - In the **Host** field, enter the destination IP or domain (e.g. `google.com` or your VPS IP)  
+        - Click **Start** to begin the traceroute  
+        - Let it run for at least **60-120 seconds** to collect data  
+        - Click **Copy Text to clipboard** or **Export HTML** to save your results
+
+        > If a support agent asked you for this, please directly send them the text you copied.
+    </Step>
+</Steps>
+
+---
+
+## Linux
+
+<Tabs items={['Using mtr', 'Using traceroute']}>
+    <Tab>
+
+    `mtr` combines traceroute and ping into a single tool and is preferred for live diagnostics.
+
+    <Steps>
+        <Step>
+        **Install mtr**  
+        ```bash
+        # Debian/Ubuntu
+        sudo apt install mtr
+
+        # CentOS/RHEL/Alma/Rocky
+        sudo dnf install mtr
+
+        # Alpine
+        sudo apk add mtr
+        ```
+        </Step>
+        <Step>
+        **Run mtr**  
+        Replace `example.com` with the domain or IP of the destination:
+        ```bash
+        mtr example.com
+        ```
+
+        You can also run it in report mode:
+        ```bash
+        mtr --report example.com
+        ```
+
+        Press `q` to quit the live interface.
+
+        > If a support agent asked you to run this, please take a screenshot of the report after letting it run for at least 60-120 seconds and send it to them.
+        </Step>
+    </Steps>
+
+    </Tab>
+        <Tab>
+
+    <Steps>
+        <Step>
+        **Install traceroute**  
+        On most systems, install with:
+        ```bash
+        # Debian/Ubuntu
+        sudo apt install traceroute
+
+        # CentOS/RHEL/Alma/Rocky
+        sudo dnf install traceroute
+
+        # Alpine
+        sudo apk add traceroute
+        ```
+        </Step>
+        <Step>
+        **Run the Traceroute**  
+        Replace `example.com` with your destination domain or IP:
+        ```bash
+        traceroute example.com
+        ```
+
+        This will display each hop (router) and latency along the path.
+
+        > If a support agent asked you to run this, please take a screenshot of the report after letting it run for at least 60-120 seconds and send it to them.
+        </Step>
+    </Steps>
+
+    </Tab>
+</Tabs>
+
+---
+
+## What to Look For
+
+- **High latency** at a specific hop may indicate congestion.
+- **Packet loss** can point to unstable or failing network routes.
+- The last hop should be the server — if it doesn't appear, there may be a block or issue in the routing path.
+- Do not worry if there are some hops between that do not connect, this is usually DDoS protection endpoints.
+
+If you're unsure how to read the output, feel free to [contact us](https://prism-host.com/contact) and paste the full results — we'll help you interpret them.

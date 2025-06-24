@@ -1,0 +1,112 @@
+---
+title: txAdmin Cloudflare Tunnel Setup
+description: This guide will walk you through how to proxy your txAdmin interface through a secure Cloudflare Tunnel, making it accessible via a custom domain name.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Requirements
+
+To proceed, you'll need:
+
+- A **VPS or Dedicated Server** with a running **FiveM/RedM server** using txAdmin. If you don't have one, [here's a guide on how to set it up](/vps-guides/setup-fivem-redm-server)
+- A **Cloudflare account** with an active domain. If you don't have one, you can [Create a Cloudflare Account here](https://dash.cloudflare.com/sign-up)
+
+---
+
+## Step 1: Setup Your Domain on Cloudflare
+
+<Steps>
+    <Step>
+        #### Add Your Domain to Cloudflare  
+        Log in to your [Cloudflare dashboard](https://dash.cloudflare.com) and add your domain if it isn’t already there.
+
+        > DNS settings should point to your VPS or dedicated server.
+    </Step>
+    <Step>
+        #### Navigate to Tunnels  
+        Go to:
+        **Account Home** > **Zero Trust** > **Networks** > **Tunnels**
+
+        > If this is your first time using Zero Trust, you'll be prompted to initialize it. Choose a name for your organization (it can be anything), and select the **Free plan** if prompted for payment.
+    </Step>
+</Steps>
+
+---
+
+## Step 2: Configure and Download the Cloudflare Tunnel
+
+<Steps>
+    <Step>
+        #### Create a New Tunnel  
+        Click **Add a Tunnel**  
+        - Select **cloudflared**
+        - Name the tunnel something relevant like `txadmin`
+    </Step>
+    <Step>
+        #### Install cloudflared  
+        Download and install `cloudflared` for your respective operating system directly from:
+
+        - [Cloudflare Tunnel Windows Installer](https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe)
+        - or [Other Releases](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/#latest-release)
+
+        Extract it to a convenient location such as `C:\cloudflared`.
+    </Step>
+</Steps>
+
+---
+
+## Step 3: Run the Cloudflare Tunnel
+
+<Steps>
+    <Step>
+        #### Open Command Prompt  
+        Open Command Prompt and change to the directory where `cloudflared.exe` is located:
+        ```bash
+        cd C:\cloudflared
+        ```
+    </Step>
+    <Step>
+        #### Run the Tunnel Command  
+        In the Cloudflare dashboard, a command will be provided after creating the tunnel (e.g. `cloudflared tunnel run txadmin`).  
+        Copy and run that command in your terminal to start the tunnel.
+    </Step>
+</Steps>
+
+---
+
+## Step 4: Route the Tunnel to txAdmin
+
+<Steps>
+    <Step>
+        Route the Tunnel to txAdmin
+        #### Create a Public URL for txAdmin  
+        Back in the Cloudflare dashboard, add a **Public Hostname** for your tunnel.
+
+        - **Subdomain**: Use something memorable like `txadmin`  
+        - **Domain**: Select your Cloudflare-managed domain  
+        - **Service Type**: `HTTP`  
+        - **URL**: `http://localhost:40120` *(or the custom txAdmin port if you've changed it)*
+
+        This will route traffic from `txadmin.yourdomain.com` directly and securely to your txAdmin panel.
+    </Step>
+</Steps>
+
+---
+
+## Final Notes
+
+- Ensure your txAdmin port is **open on your firewall** and **accessible on the server**. [View Port Forwarding Guide](/vps-guides/open-ports)
+
+- To keep the tunnel running continuously, consider installing `cloudflared` as a service using:
+    ```bash
+    cloudflared service install
+    ```
+
+- Your txAdmin panel is now securely available at txadmin.yourdomain.com with no need to expose raw IPs or ports publicly.
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!
