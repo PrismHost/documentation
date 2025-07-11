@@ -27,6 +27,23 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <link rel="manifest" href="/favicon/site.webmanifest" />
                 <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
                 <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+                <meta property="og:site_name" content="Prism Host" />
+                <meta property="og:title" content="Prism Docs" />
+                <meta property="og:locale" content="en" />
+                <meta property="og:type" content="website" />
+                <meta property="og:description" content="Prism Host Documentation / Knowledgebase. Here you can find all kinds of useful guides and other information." />
+                <meta property="og:url" content="https://prism-host.com" />
+                <meta property="og:image" content="/banner.png" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="prismhost" />
+                <meta name="twitter:title" content="Prism Docs" />
+                <meta name="twitter:image" content="/banner.png" />
+                <meta name="twitter:image:alt" content="Prism Host Documentation">
+                <meta name="twitter:description" content="Prism Host Documentation / Knowledgebase. Here you can find all kinds of useful guides and other information." />
+                <meta name="twitter:creator" content="prismhost" />
+
             </head>
             <body className="flex flex-col min-h-screen">
                 <RootProvider>{children}</RootProvider>
