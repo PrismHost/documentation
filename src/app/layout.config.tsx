@@ -1,5 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { HomeIcon, CloudIcon, ServerIcon } from 'lucide-react';
+// import { HomeIcon, CloudIcon, ServerIcon } from 'lucide-react';
 import Logo from '@/images/logo.png'
 
 /**
@@ -20,24 +20,4 @@ export const baseOptions: BaseLayoutProps = {
         ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [
-        // {
-        //     icon: <HomeIcon />,
-        //     text: 'Home',
-        //     url: 'https://prism-host.com',
-        //     secondary: false,
-        // },
-        // {
-        //     icon: <CloudIcon />,
-        //     text: "VPS Guides",
-        //     url: "/vps",
-        //     secondary: false,
-        // },
-        //         {
-        //     icon: <ServerIcon />,
-        //     text: "Dedicated Server Guides",
-        //     url: "/dedicated-server-guides",
-        //     secondary: false,
-        // },
-    ],
 };
