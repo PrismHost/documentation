@@ -1,4 +1,17 @@
 {
     "title": "VPS Guides",
-    "pages": ["./dashboard-walkthrough", "getting-started", "...", "cloudflare-tunnel-txadmin"]
+    "description": "Guides for your VPS",
+    "pages": [
+        "./dashboard-walkthrough",
+        "getting-started", 
+        "...",
+        "cloudflare-tunnel-txadmin",
+
+        "---Other---",
+		"[Home](https://discord.js.org)",
+		"[Ko-fi](https://ko-fi.com/tai03)",
+		"[Buy Me a Coffee](https://buymeacoffee.com/tai03)"
+    ],
+    "icon": "Cloud",
+    "root": true
 }

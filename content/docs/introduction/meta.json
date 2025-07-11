@@ -1,0 +1,26 @@
+{
+    "title": "Introduction",
+    "description": "Introduction to Prism Host",
+    "icon": "Building",
+    "root": true,
+    "pages": [
+        "---Welcome---",
+        "index",
+		"quickstart",
+        "migration",
+        "partners",
+
+        "---Help---",
+        "free-trial",
+        "pending-service",
+        "support-methods",
+
+		"---Network Troubleshooting---",
+		"...network-troubleshooting",
+
+		"---Other---",
+		"[Home](https://prism-host.com)",
+		"[Client Portal](https://client.prism-host.com)",
+		"[Community Discord](https://prism-host.com/discord)"
+    ]
+}

@@ -1,5 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { HomeIcon, DollarSignIcon, MessageSquareMoreIcon } from 'lucide-react';
+import { HomeIcon, CloudIcon, ServerIcon } from 'lucide-react';
 import Logo from '@/images/logo.png'
 
 /**
@@ -10,6 +10,7 @@ import Logo from '@/images/logo.png'
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
+    githubUrl: 'https://github.com/prismhost/documentation',
     nav: {
         title: (
         <>
@@ -20,23 +21,23 @@ export const baseOptions: BaseLayoutProps = {
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
     links: [
-        {
-            icon: <HomeIcon />,
-            text: 'Home',
-            url: 'https://prism-host.com',
-            secondary: false,
-        },
-        {
-            icon: <DollarSignIcon />,
-            text: "Client Portal",
-            url: "https://client.prism-host.com",
-            secondary: false,
-        },
-        {
-            icon: <MessageSquareMoreIcon />,
-            text: "Discord Community",
-            url: "https://discord.prism-host.com",
-            secondary: false,
-        },
+        // {
+        //     icon: <HomeIcon />,
+        //     text: 'Home',
+        //     url: 'https://prism-host.com',
+        //     secondary: false,
+        // },
+        // {
+        //     icon: <CloudIcon />,
+        //     text: "VPS Guides",
+        //     url: "/vps",
+        //     secondary: false,
+        // },
+        //         {
+        //     icon: <ServerIcon />,
+        //     text: "Dedicated Server Guides",
+        //     url: "/dedicated-server-guides",
+        //     secondary: false,
+        // },
     ],
 };
