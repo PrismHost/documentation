@@ -13,10 +13,10 @@ export const baseOptions: BaseLayoutProps = {
     githubUrl: 'https://github.com/prismhost/documentation',
     nav: {
         title: (
-        <>
-        <img src={Logo.src} className="size-6"></img>
-            Prism Knowledgebase
-        </>
+            <>
+                <img src={Logo.src} className="size-6"></img>
+                Prism Knowledgebase
+            </>
         ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links

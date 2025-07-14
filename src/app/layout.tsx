@@ -40,13 +40,50 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <meta name="twitter:site" content="prismhost" />
                 <meta name="twitter:title" content="Prism Docs" />
                 <meta name="twitter:image" content="/banner.png" />
-                <meta name="twitter:image:alt" content="Prism Host Documentation">
+                <meta name="twitter:image:alt" content="Prism Host Documentation" />
                 <meta name="twitter:description" content="Prism Host Documentation / Knowledgebase. Here you can find all kinds of useful guides and other information." />
                 <meta name="twitter:creator" content="prismhost" />
-
             </head>
             <body className="flex flex-col min-h-screen">
                 <RootProvider>{children}</RootProvider>
+
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.addEventListener("load", function () {
+                                requestIdleCallback(() => {
+                                    var BASE_URL = "https://chat.prism-host.com";
+                                    var g = document.createElement("script");
+                                    g.src = BASE_URL + "/packs/js/sdk.js";
+                                    g.async = true;
+                                    g.onload = function () {
+                                        window.chatwootSDK.run({
+                                            websiteToken: 'QV1vpqzZAZwAZdvGUcbLPdtW',
+                                            baseUrl: BASE_URL
+                                        });
+                                    };
+                                    document.body.appendChild(g);
+                                });
+                            });
+                        `,
+                    }}
+                />
+
+                <script
+                    defer
+                    data-domain="prism-host.com"
+                    src="https://analytics.prism-host.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+                ></script>
+
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.plausible = window.plausible || function() {
+                                (window.plausible.q = window.plausible.q || []).push(arguments)
+                            }
+                        `,
+                    }}
+                />
             </body>
         </html>
     );
