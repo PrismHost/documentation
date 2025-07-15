@@ -1,0 +1,54 @@
+---
+title: Installing an OS
+description: This guide will walk you through installing or reinstalling the operating system on your dedicated server.
+icon: CloudDownload
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Steps
+
+<Steps>
+    <Step>
+        #### Log in to the management panel  
+        Use the login link provided in your email and sign in with your credentials.
+    </Step>
+    <Step>
+        #### Select and Manage Your server  
+        On the panel, locate your server and click the **Manage** button next to it.
+    </Step>
+    <Step>
+        #### Begin OS Installation  
+        Click on the "Reinstallation" tab and select the operating system and the version you wish to install. You'll then need to scroll down and fill in the following details
+
+        Details:
+
+        - SSH Key (Optional):
+            An SSH key is a more secure way to connect to your dedicated server, usually we recommend setting this up.
+        - Hostname (Optional):
+            The server's hostname, this is usually a domain name that matches the servers IP address. If you are unsure if you need it, you don't and can safely ignore it.
+        - Root Password:
+            The password to the `root` account.
+
+        > **WARNING**: If you are reinstalling the OS, this will **delete all data** on the server. Please be sure you've backed up any necessary and important data beforehand. We are not able to restore your data after a reinstall.
+    </Step>
+    <Step>
+        #### Continue with installation
+
+        Click on "Begin Installation" to begin the install process.
+
+        The installation process usually takes a few minutes, but in some cases it may take up to 60 minutes. You'll see progress indicators and a confirmation once it's complete.
+    </Step>
+    <Step>
+        #### You're Ready to Connect!  
+        Once the OS is installed, your server is ready to connect.  
+
+        > Need help connecting? Follow our [Connecting to Your VPS Guide](/dedicated-server-guides/connecting) for step-by-step instructions.
+    </Step>
+</Steps>
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!

@@ -1,33 +1,71 @@
 ---
 title: Quickstart
-description: Here you'll find all of the guides & documentation for Prism Host and our services.
+description: Start your project in minutes
 icon: Rocket
 ---
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
-# Find Useful Guides
+## Getting Started
 
-## Dashboard Guides
+Welcome! Follow the instructions below to learn how to rent a server to get started on your next project!
 
-<Cards>
-    <Card title="Client Portal" href="/client-portal" />
-    <Card title="VPS Dashboard" href="/vps-dashboard" />
-    <Card title="Web Dashboard" href="/web-dashboard" />
-    <Card title="Game Server Dashboard" href="/game-dashboard" />
-    <Card title="Dedicated Dashboard" href="/dedicated-dashboard" />
-</Cards>
+### 1. Choose A Service
 
-## General Guides
+First, go to our [website](https://prism-host.com) and either click the "View Plans" button or use the navigation bar at the top to choose the best service to fit your needs.
 
-<Cards>
-    <Card title="VPS Guides" href="/vps-guides" />
-    <Card title="Dedicated Server Guides" href="/dedicated-server-guides" />
-    <Card title="Game Server Guides" href="/game-guides" />
-    <Card title="Dedicated Dashboard" href="/web-guides" />
-</Cards>
+<Callout title="Need help choosing?" type="info">
+    [Reach out to us](https://prism-host.com/contact) and we are more than happy to recommend a service based on what you need.
+</Callout>
+### 2. Checkout
 
-## Troubleshooting
+Once you've chosen the service you want, click on "CONFIGURE" or "ORDER NOW" on the plan you want, this will either prompt you to configure your plan or bring you to the checkout page.
 
-<Cards>
-    <Card title="Running a Speedtest" href="/network-troubleshooting/running-speedtest" />
-    <Card title="Running a Traceroute / WinMTR" href="/network-troubleshooting/running-traceroute" />
-</Cards>
+When you've configured the plan to your liking, continue to the next step to fill out your account information & payment method. We accept Credit & Debit cards through Stripe, if you need a different payment method, please [reach out](https://prism-host.com/contact) and we might be able to make an accommodation.
+
+### 3. Setting up your service
+
+Once you've paid for your service, you will receive an email containing the information you need to set it up. 
+
+- For Eco & Premium VPS, you will need to login to the VPS management Panel to being using your VPS. Click [here](/vps-guides/getting-started) to learn how to get started with your new VPS
+- For game servers & Discord bots, you will need to login to our game server management panel, called "ARC" and begin setting up your new server. Click [here](/game-guides/getting-started) to learn how to get started with your new game server.
+- For Dedicated Servers, you will receive an email containing login information to our dedicated server management panel, if you chose an operating system during checkout you will receive an email containing the SSH/RDP information for your new server. Click [here](/dedicated-server-guides/getting-started) for more information.
+- For website hosting, you will receive an email containing login information to our website management panel, called cPanel. From there you will be able to manage your website.
+
+### 4. Connect to your server
+After configuring everything necessary, you can startup your server and connect to it. This process varies per service so we have dedicated guides on how to connect to your server.
+
+- [Connecting to your VPS](/vps-guides/connecting)
+- [Connecting to your game server](/game-guides/connecting)
+- [Connecting to your dedicated server](/dedicated-server-guides/connecting)
+
+### All done! 
+
+And just like that, your service is setup and you can start using it. You can further configure the server by customizing settings or installing mods/plugs if they are available. 
+
+Need help? Feel free to [contact us](https://prism-host.com/contact) and our helpful support team will be with you ASAP.
+
+
+## FAQs
+<Accordions type="single">
+    <Accordion title="Why is my service stuck on pending?">
+        You can read more [here](/introduction/pending-service) on why your service might be stuck on pending.
+    </Accordion>
+    <Accordion title="How fast is Prism's support?">
+        Our average support time is 30 minutes or less, day or night. We've built our support team from the ground up to be the quickest and best in the industry to help you with any issues or answer any of your questions.
+    </Accordion>
+    <Accordion title="Do you offer custom plans?">
+        Yes! We're more than happy to customize certain aspects of our plan offerings to best meet your requirements. Simply [reach out to our support team](https://prism-host.com/contact) and we can get started.
+    </Accordion>
+    <Accordion title="How long until I can use my service?">
+        Eco & Premium VPS, game servers, discord bot hosting & website hosting are all deployed within 5 minutes of payment verification. Dedicated server are usually deployed within 72 hours, but stock & deployment times vary so please reach out to support to confirm.
+    </Accordion>
+    <Accordion title="Do you offer DDoS Protection?">
+        Of course! All of our services include DDoS Protection, active 24/7/365, offering 10Tbps+ of capacity and advanced filtering techniques to ensure your server never gets taken offline from a DDoS attack.
+    </Accordion>
+        <Accordion title="Are the servers online 24/7?">
+        Yes, all of our services are active 24/7, so you can utilize them at any time without worry of them being shut off.
+    </Accordion>
+        <Accordion title="What's the difference between &quot;Eco&quot; and &quot;Premium&quot;?">
+        There's no difference in support & features for either plan type - only the hardware the server runs on. We've designed our premium plans to be as fast as possible without compromising on affordability, while our eco plans are designed specifically for smaller use-cases so you can save a buck when you don't need the additional power.
+    </Accordion>
+</Accordions>

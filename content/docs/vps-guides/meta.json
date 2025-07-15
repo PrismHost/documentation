@@ -2,15 +2,22 @@
     "title": "VPS Guides",
     "description": "Guides for your VPS",
     "pages": [
-        "./dashboard-walkthrough",
-        "getting-started", 
-        "...",
+        "---Welcome---",
+        "index", 
+        "installing-an-os",
+        "connecting",
+        "reset-password",
+        "open-ports",
+
+        "---Specific Guides---",
+        "setup-fivem-redm-server",
+        "setup-mariadb-windows",
         "cloudflare-tunnel-txadmin",
 
-        "---Other---",
-		"[Home](https://discord.js.org)",
-		"[Ko-fi](https://ko-fi.com/tai03)",
-		"[Buy Me a Coffee](https://buymeacoffee.com/tai03)"
+		"---Other---",
+		"[Home](https://prism-host.com)",
+		"[Client Portal](https://client.prism-host.com)",
+		"[Community Discord](https://prism-host.com/discord)"
     ],
     "icon": "Cloud",
     "root": true

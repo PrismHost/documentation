@@ -1,7 +1,19 @@
 {
     "title": "Dedicated Server Guides",
     "description": "Guides for Dedicated Servers",
-    "pages": ["getting-started", "..."],
+    "pages": [
+        "---Welcome---",
+        "index", 
+        "installing-an-os",
+        "connecting",
+        "reset-password",
+        "open-ports",
+
+        "---Other---",
+		"[Home](https://prism-host.com)",
+		"[Client Portal](https://client.prism-host.com)",
+		"[Community Discord](https://prism-host.com/discord)"
+    ],
     "root": true,
     "icon": "Server"
 }

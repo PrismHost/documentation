@@ -1,33 +1,57 @@
 ---
 title: Migration
-description: Here you'll find all of the guides & documentation for Prism Host and our services.
+description: This guide walks you through migrating your server data to Prism Host. Follow each step carefully to ensure a smooth transition.
 icon: HardDriveUpload
 ---
 
-# Find Useful Guides
+<Callout title="We'll handle migration for you!" type="info">
+    Don't want to migrate your server yourself? Our team is happy to help with the process. Just [contact us](https://prism-host.com/contact) and we'll take care of it for you.
+</Callout>
 
-## Dashboard Guides
+---
 
-<Cards>
-    <Card title="Client Portal" href="/client-portal" />
-    <Card title="VPS Dashboard" href="/vps-dashboard" />
-    <Card title="Web Dashboard" href="/web-dashboard" />
-    <Card title="Game Server Dashboard" href="/game-dashboard" />
-    <Card title="Dedicated Dashboard" href="/dedicated-dashboard" />
-</Cards>
+## Step 1: Archive Your Data
 
-## General Guides
+Before migrating, create a compressed archive (e.g., `.zip`, `.tar.gz`) of your current server files.
 
-<Cards>
-    <Card title="VPS Guides" href="/vps-guides" />
-    <Card title="Dedicated Server Guides" href="/dedicated-server-guides" />
-    <Card title="Game Server Guides" href="/game-guides" />
-    <Card title="Dedicated Dashboard" href="/web-guides" />
-</Cards>
+- Only include the **essential data**:
+    - Config files
+    - World or map data
+    - Plugins or mods
+    - Resources
+- **Exclude unnecessary directories** such as:
+    - `cache/`
+    - `node_modules/`
+    - `logs/` (unless needed for troubleshooting)
 
-## Troubleshooting
+This will keep your archive smaller and make your migration faster.
 
-<Cards>
-    <Card title="Running a Speedtest" href="/network-troubleshooting/running-speedtest" />
-    <Card title="Running a Traceroute / WinMTR" href="/network-troubleshooting/running-traceroute" />
-</Cards>
+## Step 2: Upload Your Archive
+
+You can upload your archive in one of two ways:
+
+1. **Via S/FTP**  
+    For VPS or dedicated servers, you can upload using SFTP.  
+    Learn how to set up SFTP access for different services. [VPS](/vps-guides/sftp-setup). [Dedicated Servers](/dedicated-server-guides/sftp-setup), [Game Servers & Discord Bot Hosting](/game-servers/sftp-setup) & [Website Hosting](/website-guides/sftp-setup)
+
+2. **Via the management panel**  
+    If your service panel supports file uploads, you can upload your archive directly through the browser, usually through the "File Manager"
+
+
+## Step 3: Extract Your Files
+
+Once uploaded, extract the archive:
+
+- Use the file manager or SSH (if available) to unarchive the files.
+- Place them in the appropriate directory, such as:
+    - `/home/container` (for game servers)
+    - `/var/www/` (for web servers)
+    - or whatever directory fits best
+
+---
+
+## Step 4: Start Your Server
+
+Start your server using the normal process in the Prism Host panel.
+
+- If your service doesn't start or behaves unexpectedly, don't worry - [Contact us](https://prism-host.com/contact) and we'll help resolve the issue.

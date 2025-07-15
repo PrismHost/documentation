@@ -1,18 +1,58 @@
 ---
-title: VPS Guides
-description: Here's the guides for Virtual Private Servers.
-icon: Cloud
+title: Getting Started
+description: This guide will help you get started with your new VPS - from logging into the VPS panel to installing your OS and connecting to your server.
+index: 1
+icon: Rocket
 ---
 
-## VPS Guides
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-<Cards>
-    <Card title="Getting Started" href="/vps-guides/getting-started" />
-    <Card title="Connecting to your server" href="/vps-guides/connecting" />
-    <Card title="Installing an Operating System" href="/vps-guides/installing-an-os" />
-    <Card title="How to reset the VPS password" href="/vps-guides/reset-vps-password" />
-    <Card title="Setting up a FiveM or RedM Server on Windows" href="/vps-guides/setup-fivem-redm-server" />
-    <Card title="How to setup a MySQL (MariaDB) database on Windows" href="/vps-guides/setup-mariadb-windows" />
-    <Card title="How to open ports in firewall" href="/vps-guides/open-ports" />
-    <Card title="Setup txAdmin Cloudflare Tunnel" href="/vps-guides/cloudflare-tunnel-txadmin" />
-</Cards>
+## Steps
+
+<Steps>
+    <Step>
+        #### Check Your Email  
+        After purchasing a VPS, you'll receive an email with your **VPS panel login details**. 
+        
+        This includes:
+        - Panel URL  
+        - Username (usually your email)  
+        - Password
+        
+        > If you haven't purchased one, you can check out our [Premium](https://prism-host.com/pvps) & [Budget](https://prism-host.com/bvps) VPS Plans!
+
+        > **Note**: We **highly** recommend you reset this password for security. [Here's a guide](/vps-guides/reset-password) on how you can reset it
+    </Step>
+    <Step>
+        #### Log in to the VPS Panel  
+        Visit the link provided in your email and enter your credentials to access your VPS dashboard.
+    </Step>
+    <Step>
+        #### Select and Manage Your VPS  
+        On the VPS panel dashboard, you'll see a list of your active VPS instances.  
+        Click **Manage** next to the VPS you want to work with.
+    </Step>
+    <Step>
+        #### Install Your Operating System  
+        Once on the VPS management page, you can install your preferred OS using the built-in installer.
+
+        > Follow our full guide here:  
+        [How to Install an Operating System](/vps-guides/installing-an-os)
+    </Step>
+    <Step>
+        #### Connect to Your VPS  
+        Once your OS is installed and ready, you can connect to your server:
+
+        - **Windows VPS** - Connect using Remote Desktop Connection  
+        - **Linux VPS** - Connect using SSH via Windows Terminal  
+
+        > View the full connection guide here:  
+        [How to Connect to Your VPS](/vps-guides/connecting)
+    </Step>
+</Steps>
+
+---
+
+## Need Help?
+
+If you run into any issues, don't hesitate to [contact us](https://prism-host.com/contact) - we're happy to help anyway we can!

@@ -1,5 +1,5 @@
 ---
-title: Open Ports on Your VPS
+title: Open Ports on your Server
 description: To allow incoming or outgoing traffic to your applications (such as game servers, websites, or panels), you need to open the correct ports on your firewall. This guide walks you through how to do that on both Windows and several Linux flavors
 icon: BrickWallFire
 ---
@@ -9,7 +9,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
 ## Windows (Defender Firewall)
 
-Follow these steps to open ports on your Windows VPS using Windows Defender Firewall:
+Follow these steps to open ports on your dedicated server using Windows Defender Firewall:
 
 <Steps>
     <Step>
@@ -19,7 +19,7 @@ Follow these steps to open ports on your Windows VPS using Windows Defender Fire
     <Step>
         #### Choose Inbound or Outbound Rules  
         In the left sidebar, click either:
-        - **Inbound Rules** (for allowing external traffic into your server)  
+        - **Inbound Rules** (for allowing external traffic into your VPS)  
         - **Outbound Rules** (for allowing traffic going out)
 
         Most users will need **Inbound Rules**.
@@ -65,7 +65,7 @@ Follow these steps to open ports on your Windows VPS using Windows Defender Fire
 
 ## Linux (UFW, iptables, or firewalld)
 
-Choose the firewall system your Linux VPS is using and follow the corresponding instructions:
+Choose the firewall system your Linux dedicated server is using and follow the corresponding instructions:
 
 <Tabs items={['UFW', 'iptables', 'firewalld']}>
     <Tab>

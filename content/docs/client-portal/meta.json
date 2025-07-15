@@ -1,7 +1,13 @@
 {
     "title": "Client Portal Guides",
     "description": "Guides for our Client Portal",
-    "pages": ["..."],
+    "pages": [
+        "...",
+        
+        "---Other---",
+		"[Home](https://prism-host.com)",
+		"[Client Portal](https://client.prism-host.com)",
+		"[Community Discord](https://prism-host.com/discord)"],
     "icon": "CircleDollarSign",
     "root": true
 }
